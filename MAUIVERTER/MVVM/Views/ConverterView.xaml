@@ -18,12 +18,14 @@
                                  VerticalOptions="Center">
                 <Entry FontSize="100"
                        HorizontalTextAlignment="Center"
-                       Text="100"
-                       TextColor="{StaticResource TextColor}" />
+                       Text="{Binding FromValue}"
+                       TextColor="{StaticResource TextColor}"
+                       ReturnCommand="{Binding ReturnCommand}"/>
                 <Picker HorizontalTextAlignment="Center" 
                         TextColor="{StaticResource TextColor}"
                         ItemsSource="{Binding FromMeasures}"
-                        SelectedItem="{Binding CurrentFromMeasure}"/>
+                        SelectedItem="{Binding CurrentFromMeasure}"
+                        SelectedIndexChanged="Picker_SelectedIndexChanged"/>
 
             </VerticalStackLayout>
         </Grid>
@@ -33,12 +35,13 @@
                                  VerticalOptions="Center">
                 <Label FontSize="100"
                        HorizontalTextAlignment="Center"
-                       Text="100"
+                       Text="{Binding ToValue, StringFormat='{0:0.##}'}"
                        TextColor="{StaticResource TextColor}" />
                 <Picker HorizontalTextAlignment="Center" 
                         TextColor="{StaticResource TextColor}"
                         ItemsSource="{Binding ToMeasures}"
-                        SelectedItem="{Binding CurrentToMeasure}"/>
+                        SelectedItem="{Binding CurrentToMeasure}"
+                        SelectedIndexChanged="Picker_SelectedIndexChanged"/>
 
             </VerticalStackLayout>
         </Grid>
